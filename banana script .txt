@@ -45,7 +45,23 @@ local Tabs = {
         setclipboard("https://discord.gg/chuoihub")
     end
 })
-    
+
+    Tabs.Main2:AddButton({
+    Title = "key rubi hoho",
+    Description = "banana hub contruy",
+    Callback = function()
+        setclipboard("https://hehehub-acsu123.pythonanywhere.com/api/getkey?hwid=rubuhub")
+    end
+})
+
+Tabs.Main4:AddButton({
+    Title = "key daucauhub",
+    Description = "banana hub contruy",
+    Callback = function()
+        setclipboard("conrathethongginua")
+    end
+})
+
     Tabs.Main1:AddButton({
     Title="banana hub bản 1",
     Description="",
@@ -418,10 +434,227 @@ Tabs.Main1:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/refs/heads/main/AnDepZaiHubBeta.lua"))()
   end
 })
-Tabs.Main4:AddButton({
+Tabs.Main1:AddButton({
     Title="script banana trẩu",
     Description="",
     Callback=function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdao2k4/trauroblox/refs/heads/main/traubluev1"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script bánh mía hub",
+    Description="",
+    Callback=function()
+repeat task.wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Graihub/Loader-bamiahub/refs/heads/main/bamia"))()
+  end
+})
+Tabs.Main3:AddButton({
+    Title="script auto lấy cybox",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizuharasup/free/refs/heads/main/cy.lua"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script rubi hoho",
+    Description="",
+    Callback=function()
+repeat task.wait() until game:IsLoaded()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HohoV2/refs/heads/main/BloxFruit/Custom/RubuHub.lua"))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script kaintun swift",
+    Description="",
+    Callback=function()
+repeat task.wait() until game:IsLoaded()
+_G.Quest = {
+    ["RGB Aura Haki"] = true,
+    ["Pull Lever"] = true,
+    ["Quest Dough Awaken"] = true
+}
+_G.Race = {
+    ["Select Race"] = {"Human","Fishman","Skypiea","Mink"},
+    ["Lock Race"] = true,
+    ["Evo Race V3"] = true
+}
+_G.Melee = {
+    ["Godhuman"] = true
+}
+_G.Sword = {
+    ["Saber"] = true,
+    ["Midnight Blade"] = true,
+    ["Shisui"] = true,
+    ["Saddi"] = true,
+    ["Wando"] = true,
+    ["Yama"] = true,
+    ["Koko"] = false,
+    ["Rengoku"] = true,
+    ["Canvander"] = true,
+    ["Buddy Sword"] = true,
+    ["Twin Hooks"] = true,
+    ["SpikeyTrident"] = true,
+    ["Hallow Scryte"] = true,
+    ["Dark Dagger"] = true,
+    ["Tushita"] = true,
+    ["True Triple Katana"] = true,
+    ["Cursed Dual Katana"] = true,
+    ["Shark Anchor"] = true
+}
+_G.Gun = {
+    ["Kabucha"] = true,
+    ["Acidum Rifle"] = true,
+    ["Soul Guitar"] = true,
+    ["Serpent Bow"] = true
+}
+_G.Fruit = {
+    ["Main Fruit"] = {"Kitsune-Kitsune","T-Rex-T-Rex","Mammoth-Mammoth"},
+    ["Select Fruit"] = {"Dark-Dark","Magma-Magma"}
+}
+_G.Mastery = {
+    ["Melee"] = true,
+    ["Sword"] = true,
+    ["Fruit"] = true
+}
+_G.Setting = {
+    ["FPS Booster"] = true,
+    ["Safe Tween"] = false,
+    ["Speed Tween"] = 325
+}
+getgenv().Deleted_Ui = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/q8ta0e/roblox/main/SwitchHubKaitun.lua"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script thg hoho",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HohoV2/refs/heads/main/BloxFruit/Custom/ThgHub.lua"))()
+  end
+})
+Tabs.Main1:AddButton({
+    Title="script maru",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/longhihilonghihi-hub/MaruHubV1/refs/heads/main/MainV1.Lua "))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script meow kaintun",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MEOW-HUB-DEV/SCRIPT-FREE/refs/heads/main/MeowKaitun.lua"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script bear hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudz/refs/heads/main/Bearhud.lua"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script nếu bị lỗi farm",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/e9c206fd76482ee2"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script midnight hub",
+    Description="",
+    Callback=function()
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+getgenv().Team = "Pirates"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ohofo2279/Midnight/refs/heads/main/MidnightX-BloxFruits.lua"))()
+  end
+})
+Tabs.Main2: AddButton({
+    Title="script xenter hub",
+    Description="",
+    Callback=function()
+getgenv().Version = "V4"
+
+getgenv().Team = "Marines"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.lua"))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script tày hub kaitun",
+    Description="",
+    Callback=function()
+getgenv().Config = {
+
+    Team = "Pirates",
+
+    FarmConfig = {
+
+        ["Out game when done all"] = true,
+
+        ["Bypass Teleport"] = true,
+
+        ["Double Quest(RISK)"] = true
+
+    },
+
+    Items = {
+
+        ["Saber"] = true,
+
+        ["Pole (1st form)"] = true,
+
+        ["Skull Guitar"] = true,
+
+        ["Cursed Dual Katana"] = true,
+
+        ["Godhuman"] = true
+
+    },
+
+    Webhook = {
+
+        ["Enabled"] = false,
+
+        ["Url"] = ""
+
+    }
+
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VTDROBLOX/Animehub/refs/heads/main/tayhub-%5BKAITUN%5D.txt"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script andepzai hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/refs/heads/main/AnDepZaiHubBeta.lua"))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script tày hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VTDROBLOX/Animehub/refs/heads/main/Tayhub.txt"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script redz hub hub",
+    Description="",
+    Callback=function()
+local Settings = {
+JoinTeam = "Pirates"; -- Pirates/Marines
+Translator = true; -- true/false
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PlockScripts/newredz/refs/heads/main/Remake-version.luau"))(Settings)
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script quantum hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
   end
 })
