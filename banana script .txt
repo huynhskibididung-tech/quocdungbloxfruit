@@ -23,7 +23,7 @@ end)
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 repeat wait() until game:IsLoaded()
 local Window = Fluent:CreateWindow({
-    Title = "banana hub USB tổng with quocdungskibidi",
+    Title = "banana hub chuyên cày game thuê anh em láy nhớ",
     SubTitle = "Blox Fruit",
     TabWidth = 157,
     Size = UDim2.fromOffset(450, 300),
@@ -656,5 +656,80 @@ Tabs.Main2:AddButton({
     Description="",
     Callback=function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+  end
+})
+Tabs.Main1:AddButton({
+    Title=" Script W-azure hub",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/85e904ae1ff30824c1aa007fc7324f8f.lua"))()
+  end
+})
+Tabs.Main1:AddButton({
+    Title="script fix lag",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script kaitun might",
+    Description="",
+    Callback=function()
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+
+getgenv().Team = "Pirates"
+getgenv().SettingFarm = {
+    ["White Screen"] = true,
+    ["Black Screen"] = false,
+    ["Boost Fps"] = true,
+    
+    ["Lock Fps"] = {
+        ["Enabled"] = false,
+        ["FPS"] = 20,
+    },
+    
+    ["Auto Chat"] = {
+        ["Enabled"] = true,
+        ["Text"] = "Midnight Hub Kaitun is Farming!",
+        ["Delay"] = "15",
+    },
+    
+    ["Sword"] = {
+        "Dual-Headed Blade", "Smoke Admiral", "Wardens Sword", "Cutlass",
+        "Katana", "Dual Katana", "Triple Katana", "Iron Mace", "Saber",
+        "Pole (1st Form)", "Gravity Blade", "Longsword", "Rengoku",
+        "Midnight Blade", "Soul Cane", "Bisento", "Yama", "Tushita",
+        "Cursed Dual Katana"
+    },
+    
+    ["Gun"] = {
+        "Soul Guitar", "Kabucha", "Venom Bow", "Musket", "Flintlock",
+        "Refined Slingshot", "Magma Blaster", "Dual Flintlock", "Cannon",
+        "Bizarre Revolver", "Bazooka"
+    }
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ohofo2279/Midnight/refs/heads/main/MidnightX-KaitunBF.lua"))()
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script kaintun lấy soul guitar",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Teddyseetink/Haidepzai/refs/heads/main/Kaitun-SoulGiutar.lua"))() 
+  end
+})
+Tabs.Main4:AddButton({
+    Title="script fix lag",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+  end
+})
+Tabs.Main1:AddButton({
+    Title="script như redz",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
   end
 })
