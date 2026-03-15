@@ -92,25 +92,7 @@ Tabs.Main1:AddButton({
     Title="bananahub bản 4",
     Description="",
     Callback=function()
-	  local hs = game:GetService("HttpService")
-
-local ok, r = pcall(function()
-
-  return hs:RequestAsync({
-
-    Url = "http://eu.leonodes.xyz:24771/api/loader",
-
-    Method = "POST",
-
-    Headers = {["X-HDANH"] = "HDANH_SCRIPT_SECRET_2025"},
-
-    Body = "{}"
-
-  })
-
-end)
-
-if ok and r and r.Success then loadstring(r.Body)() end
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/hdanhvip/hdanhhub/refs/heads/main/BananaHub.lua.txt"))()
   end
 })
 Tabs.Main1:AddButton({
@@ -726,10 +708,46 @@ Tabs.Main4:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
   end
 })
-Tabs.Main1:AddButton({
-    Title="script như redz",
+Tabs.Main2:AddButton({
+    Title="script leaf hub",
     Description="",
     Callback=function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
+repeat task.wait() until game:IsLoaded() and game.Players.LocalPlayer
+loadstring(game:HttpGet("https://github.com/LeafHubAcademy/LeafHub/raw/refs/heads/main/Leaf.lua"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script trap",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Jadelly/bloxfruit/refs/heads/main/Trap", true))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script MENU ZIS ENG V2",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://github.com/LuaCrack/Zis/raw/refs/heads/main/ZisBearEnglish"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script MENU ZIS XANH TIẾNG VIỆT",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://github.com/LuaCrack/Zis/raw/refs/heads/main/ZisGreenVn"))()
+  end
+})
+Tabs.Main2:AddButton({
+    Title="script RedZ Hub Xanh Lá",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/MainV2.lua"))()
+  end
+})
+Tabs.Main3:AddButton({
+    Title="script hop sever fluit",
+    Description="",
+    Callback=function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/01f0b1186a4c799992e4fa2a74a5f3d0.lua"))()
   end
 })
