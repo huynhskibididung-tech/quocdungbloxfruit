@@ -1,0 +1,193 @@
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+
+-- 🌌 INTRO GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "GraiIntro"
+gui.IgnoreGuiInset = true
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- Nền tối nhẹ
+local bg = Instance.new("Frame")
+bg.Size = UDim2.new(1,0,1,0)
+bg.BackgroundColor3 = Color3.fromRGB(0,0,0)
+bg.BackgroundTransparency = 0.3
+bg.Parent = gui
+
+-- Logo Image
+local logo = Instance.new("ImageLabel")
+logo.Parent = gui
+logo.AnchorPoint = Vector2.new(0.5,0.5)
+logo.Position = UDim2.new(0.5,0,0.5,0)
+logo.Size = UDim2.new(0,0,0,0) -- bắt đầu nhỏ rồi zoom
+logo.BackgroundTransparency = 1
+logo.Image = "http://www.roblox.com/asset/?id=77111304194141"
+logo.ImageTransparency = 1
+
+-- Hiện logo (zoom + fade in)
+TweenService:Create(logo, TweenInfo.new(1.5, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
+    Size = UDim2.new(0,200,0,200),
+    ImageTransparency = 0
+}):Play()
+
+-- Xoay logo
+task.spawn(function()
+    while logo.Parent do
+        logo.Rotation = logo.Rotation + 0.5
+        task.wait(0.01)
+    end
+end)
+
+-- Chữ bên dưới logo
+local msg = Instance.new("TextLabel")
+msg.Parent = gui
+msg.AnchorPoint = Vector2.new(0.5,0)
+msg.Position = UDim2.new(0.5,0,0.75,0)
+msg.Size = UDim2.new(0,600,0,80)
+msg.BackgroundTransparency = 1
+msg.Text = "fosaken quocdungHub"
+msg.TextColor3 = Color3.fromRGB(0,255,255)
+msg.Font = Enum.Font.GothamBlack
+msg.TextScaled = true
+msg.TextStrokeTransparency = 0
+msg.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+msg.TextTransparency = 1
+
+-- Chữ fade in
+TweenService:Create(msg, TweenInfo.new(1.2), {TextTransparency=0}):Play()
+
+-- Giữ intro 4s
+task.wait(4)
+
+-- Fade out tất cả
+TweenService:Create(logo, TweenInfo.new(1.2), {ImageTransparency=1}):Play()
+TweenService:Create(msg, TweenInfo.new(1.2), {TextTransparency=1}):Play()
+TweenService:Create(bg, TweenInfo.new(1.2), {BackgroundTransparency=1}):Play()
+task.wait(1.5)
+
+gui:Destroy()
+
+------------------------------------------------------------
+-- 🎛 MAIN UI BUTTON
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local ImageButton = Instance.new("ImageButton")
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.1,0,0.15,0)
+ImageButton.Size = UDim2.new(0,40,0,40)
+ImageButton.Draggable = true
+ImageButton.Image = "http://www.roblox.com/asset/?id=75540555458334"
+
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = ImageButton
+UICorner.CornerRadius = UDim.new(1,10)
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+end)
+
+------------------------------------------------------------
+-- 📦 LOAD FLUENT
+repeat task.wait() until game:IsLoaded()
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title="fosaken quocdungHub",
+    SubTitle="Tổng  Script fosaken",
+    TabWidth=157,
+    Size=UDim2.fromOffset(450,300),
+    Acrylic=true,
+    Theme="Dark",
+    MinimizeKey=Enum.KeyCode.End
+})
+
+-- Tabs
+local Tabs = {
+    Main0=Window:AddTab({Title="Thông Tin"}),
+    Main1=Window:AddTab({Title="fosaken"}),
+}
+
+-- Tab 0: Thông Tin
+Tabs.Main0:AddButton({
+    Title="disco huhao hub",
+    Description="huhao",
+    Callback=function()
+        setclipboard("https://discord.gg/zvvTRqfvn")
+    end
+})
+
+-- Tab 1: fosaken 
+Tabs.Main1:AddButton({
+    Title="furina Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/b803c8ca9d0205a7561d9f0467418e00b7743ef568f5471653432762027cf0f0/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="msploit Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://github.com/MicLing-7877/Msploit/raw/main/load/Msploit?raw=true"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Fix Lag",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="veus Hub",
+    Callback=function()
+loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/3d11ed5dd5df9bf4a0fc1cd364bc16060f6c3878833c6ef41e1b8d32996df084/download"))()
+print("skidded hacks activated")
+    end
+})
+Tabs.Main1:AddButton({
+    Title="key veus hub",
+    Description="veus hub",
+    Callback=function()
+        setclipboard("VEX-KEY")
+    end
+})
+Tabs.Main1:AddButton({
+    Title="fixfox hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FixFox550/FixFox/refs/heads/main/FixFoxLoader"))() 
+    end
+})
+Tabs.Main1:AddButton({
+    Title="guessting Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="glovSsken HUb",
+    Callback=function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/2p6H1BbK"))() 
+    end
+})
+Tabs.Main1:AddButton({
+    Title="vortes Hub1",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/9ab9a6b9e7d70be5de380fc10f7878bb4008824276dabdd6689b4dcb64aaab93/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="vỏtes Hub ",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/3d11ed5dd5df9bf4a0fc1cd364bc16060f6c3878833c6ef41e1b8d32996df084/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="cúerhub Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcursedsocute/Forsaken-Script/refs/heads/main/lua"))()
+    end
+})
