@@ -1,0 +1,411 @@
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local player = Players.LocalPlayer
+
+-- 🌌 INTRO GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "GraiIntro"
+gui.IgnoreGuiInset = true
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+-- Nền tối nhẹ
+local bg = Instance.new("Frame")
+bg.Size = UDim2.new(1,0,1,0)
+bg.BackgroundColor3 = Color3.fromRGB(0,0,0)
+bg.BackgroundTransparency = 0.3
+bg.Parent = gui
+
+-- Logo Image
+local logo = Instance.new("ImageLabel")
+logo.Parent = gui
+logo.AnchorPoint = Vector2.new(0.5,0.5)
+logo.Position = UDim2.new(0.5,0,0.5,0)
+logo.Size = UDim2.new(0,0,0,0) -- bắt đầu nhỏ rồi zoom
+logo.BackgroundTransparency = 1
+logo.Image = "http://www.roblox.com/asset/?id=75540555458334"
+logo.ImageTransparency = 1
+
+-- Hiện logo (zoom + fade in)
+TweenService:Create(logo, TweenInfo.new(1.5, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
+    Size = UDim2.new(0,200,0,200),
+    ImageTransparency = 0
+}):Play()
+
+-- Xoay logo
+task.spawn(function()
+    while logo.Parent do
+        logo.Rotation = logo.Rotation + 0.5
+        task.wait(0.01)
+    end
+end)
+
+-- Chữ bên dưới logo
+local msg = Instance.new("TextLabel")
+msg.Parent = gui
+msg.AnchorPoint = Vector2.new(0.5,0)
+msg.Position = UDim2.new(0.5,0,0.75,0)
+msg.Size = UDim2.new(0,600,0,80)
+msg.BackgroundTransparency = 1
+msg.Text = "fosaken quocdungHub"
+msg.TextColor3 = Color3.fromRGB(0,255,255)
+msg.Font = Enum.Font.GothamBlack
+msg.TextScaled = true
+msg.TextStrokeTransparency = 0
+msg.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+msg.TextTransparency = 1
+
+-- Chữ fade in
+TweenService:Create(msg, TweenInfo.new(1.2), {TextTransparency=0}):Play()
+
+-- Giữ intro 4s
+task.wait(4)
+
+-- Fade out tất cả
+TweenService:Create(logo, TweenInfo.new(1.2), {ImageTransparency=1}):Play()
+TweenService:Create(msg, TweenInfo.new(1.2), {TextTransparency=1}):Play()
+TweenService:Create(bg, TweenInfo.new(1.2), {BackgroundTransparency=1}):Play()
+task.wait(1.5)
+
+gui:Destroy()
+
+------------------------------------------------------------
+-- 🎛 MAIN UI BUTTON
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local ImageButton = Instance.new("ImageButton")
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0,0,0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.1,0,0.15,0)
+ImageButton.Size = UDim2.new(0,40,0,40)
+ImageButton.Draggable = true
+ImageButton.Image = "http://www.roblox.com/asset/?id=75540555458334"
+
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = ImageButton
+UICorner.CornerRadius = UDim.new(1,10)
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+end)
+
+------------------------------------------------------------
+-- 📦 LOAD FLUENT
+repeat task.wait() until game:IsLoaded()
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title="fosaken quocdungHub",
+    SubTitle="Tổng  Script fosaken",
+    TabWidth=157,
+    Size=UDim2.fromOffset(450,300),
+    Acrylic=true,
+    Theme="Dark",
+    MinimizeKey=Enum.KeyCode.End
+})
+
+-- Tabs
+local Tabs = {
+    Main0=Window:AddTab({Title="Thông Tin"}),
+    Main1=Window:AddTab({Title="fosaken"}),
+}
+
+-- Tab 0: Thông Tin
+Tabs.Main0:AddButton({
+    Title="disco huhao hub",
+    Description="huhao",
+    Callback=function()
+        setclipboard("https://discord.gg/zvvTRqfvn")
+    end
+})
+
+-- Tab 1: fosaken 
+Tabs.Main1:AddButton({
+    Title="furina Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/b803c8ca9d0205a7561d9f0467418e00b7743ef568f5471653432762027cf0f0/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="msploit Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://github.com/MicLing-7877/Msploit/raw/main/load/Msploit?raw=true"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Fix Lag",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="veus Hub",
+    Callback=function()
+loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/3d11ed5dd5df9bf4a0fc1cd364bc16060f6c3878833c6ef41e1b8d32996df084/download"))()
+print("skidded hacks activated")
+    end
+})
+Tabs.Main1:AddButton({
+    Title="key veus hub",
+    Description="veus hub",
+    Callback=function()
+        setclipboard("VEX-KEY")
+    end
+})
+Tabs.Main1:AddButton({
+    Title="fixfox hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FixFox550/FixFox/refs/heads/main/FixFoxLoader"))() 
+    end
+})
+Tabs.Main1:AddButton({
+    Title="guessting Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LolnotaKid/project/refs/heads/main/AutoBLOCKKKWAHV1"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="glovSsken HUb",
+    Callback=function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/2p6H1BbK"))() 
+    end
+})
+Tabs.Main1:AddButton({
+    Title="vortes Hub1",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.junkie-development.de/api/v1/luascripts/public/9ab9a6b9e7d70be5de380fc10f7878bb4008824276dabdd6689b4dcb64aaab93/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="vỏtes Hub ",
+    Callback=function()
+        loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/3d11ed5dd5df9bf4a0fc1cd364bc16060f6c3878833c6ef41e1b8d32996df084/download"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="cúerhub Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcursedsocute/Forsaken-Script/refs/heads/main/lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="câtsatehub Hub",
+    Callback=function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/aibabylaugh/catsaken-real-script-not-assets/refs/heads/main/obfuscated-1448974601077002340.lua' ))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="quocdunglaydai Hub",
+    Callback=function()
+        script_key = "KEY"; -- A key might be required, if not, delete this line.
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e1cfd93b113a79773d93251b61af1e2f.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="rita Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/34f3f/forsaken.github.io/refs/heads/main/ringtabublik.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="nakio Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NaikoScript/Forsaken-Plus/main/Script"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="zxcursedsocute Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zxcursedsocute/Forsaken-Script/refs/heads/main/lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="ringta Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/forsakenloader.github.io/refs/heads/main/RINGTABUBLIK.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="ritahub no Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/34f3f/forsaken.github.io/refs/heads/main/ringtabublik.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="snt Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Snowt69/SNT-HUB/refs/heads/main/Forsaken"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="fasaken Hub",
+    Callback=function()
+        if getgenv then
+    getgenv().DebugNotifications = "false"
+    getgenv().TrackMePlease = "true"
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ivannetta/ShitScripts/main/forsaken.lua"))()
+
+--the system key is present
+    end
+})
+Tabs.Main1:AddButton({
+    Title="admin:))) Hub",
+    Callback=function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NaikoScript/Forsaken-Plus/main/Script"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="bay Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="fosaken Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptjame/Forsaken/refs/heads/main/null.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Voidware Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/forsaken.lua", true))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Catsaken Remastered Hub",
+    Callback=function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/artas01/artas01/refs/heads/main/Catsaken.lua'))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Sigmasaken Hub",
+    Callback=function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/sigmaboy-sigma-boy/TheSigmaHub/refs/heads/main/Loader.lua'))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Discord/gg Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/who-else123/my-scripts/refs/heads/main/Syncsaken/main.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Trung tâm bị bỏ rơi JG Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://pastebin.com/raw/fFQBqL9G"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Xone Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://pastefy.app/yfCRU1cH/raw"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="FCal Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://rscripts.net/raw/fcal-hub-keyless-under-development_1771583900278_foslhB7HI2.txt",true))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="fater Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://gistpad.com/raw/feather-23"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="ESP Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/PlutomasterAccount/Forsaken-ESP/refs/heads/main/Forsaken%20ESP%20Plutomaster.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Execo Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/3678bf74476a3ec0cc1471cbab867839.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Sasaken Hub",
+    Callback=function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/ScriptCopilot32/Forsaken/refs/heads/main/Forsakenscript'))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="Lumin Hub",
+    Callback=function()
+       loadstring(game:HttpGet("https://lumin-hub.lol/loader.lua",true))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="robscript.com Hub",
+    Callback=function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/artas01/robscript/refs/heads/main/loader.lua'))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="backstab Hub two time 🤡",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidi399/backstab-v3.1/refs/heads/main/script.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="yamhm Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-YARHM-12403"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="syncsaken Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/who-else123/my-scripts/refs/heads/main/Syncsaken/main.lua"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="c00lkid Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-C00LKID-r15-run-now-finally-accurate-135976"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="C00lkid Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-c00lgui-134417"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="C00lkid Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-C00LK1D-gui-v2-credit-to-c00lkid-82054"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="chismas Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/CHRISTMAS-Forsaken-a-lot-of-features-78406"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="zzz Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://rawscripts.net/raw/Forsaken-zzz-hub-new-script-op-74811"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="arpata Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/erxsethis/thisisyomka/refs/heads/main/main"))()
+    end
+})
+Tabs.Main1:AddButton({
+    Title="yomaka Hub ",
+    Callback=function()
+       loadstring(game:HttpGet("https://yoxi-hub.fun/api/loader"))()
+    end
+})
